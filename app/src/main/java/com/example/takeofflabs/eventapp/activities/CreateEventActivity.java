@@ -108,25 +108,37 @@ public class CreateEventActivity extends AppCompatActivity {
                             HttpResponse response;
                             try {
                                 response = httpclient.execute(httpPost);
-                                String server_response = EntityUtils.toString(response.getEntity());
-                                try {
-                                    JSONObject jsonObject = new JSONObject(server_response);
-                                    String id = jsonObject.optString(EVENT_ID, DEFAULT);
-                                    String text = jsonObject.optString(EVENT_TEXT, DEFAULT);
-                                    String date = jsonObject.optString(EVENT_DATE, DEFAULT);
-                                    Event event = new Event(id, text, date);
-                                    eventDatabase.saveEvent(event);
-                                }catch (Exception e) {
-                                    e.printStackTrace();
-                                }
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        Toast.makeText(getBaseContext(), "Event added!", Toast.LENGTH_LONG).show();
-                                        Intent intent = new Intent(CreateEventActivity.this, EventListActivity.class);
-                                        startActivity(intent);
+                                if (response.getStatusLine().getStatusCode() == 201) {
+                                    String server_response = EntityUtils.toString(response.getEntity());
+                                    try {
+                                        JSONObject jsonObject = new JSONObject(server_response);
+                                        String id = jsonObject.optString(EVENT_ID, DEFAULT);
+                                        String text = jsonObject.optString(EVENT_TEXT, DEFAULT);
+                                        String date = jsonObject.optString(EVENT_DATE, DEFAULT);
+                                        Event event = new Event(id, text, date);
+                                        eventDatabase.saveEvent(event);
+                                    }catch (Exception e) {
+                                        e.printStackTrace();
                                     }
-                                });
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toast.makeText(getBaseContext(), "Event added!", Toast.LENGTH_LONG).show();
+                                            Intent intent = new Intent(CreateEventActivity.this, EventListActivity.class);
+                                            startActivity(intent);
+                                        }
+                                    });
+                                } else {
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toast.makeText(getBaseContext(), "Something went wrong. Please try again later.", Toast.LENGTH_LONG).show();
+                                            Intent intent = new Intent(CreateEventActivity.this, EventListActivity.class);
+                                            startActivity(intent);
+                                        }
+                                    });
+                                }
+
                             }catch (IOException ex) {
                                 ex.printStackTrace();
                             }

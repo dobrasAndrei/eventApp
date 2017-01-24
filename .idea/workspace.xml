@@ -19,10 +19,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/CreateEventActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/CreateEventActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/EventListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/EventListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
     <ignored path="EventApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,7 +52,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EventListActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EventListActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/EventListActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
@@ -88,17 +85,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateEventActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CreateEventActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/CreateEventActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="124" column="85" selection-start-line="124" selection-start-column="85" selection-end-line="124" selection-end-column="85" />
+            <state relative-caret-position="465">
+              <caret line="134" column="123" selection-start-line="134" selection-start-column="123" selection-end-line="134" selection-end-column="123" />
               <folding>
                 <element signature="e#2237#2258#0" expanded="false" />
-                <element signature="e#6451#6474#0" expanded="false" />
+                <element signature="e#7292#7315#0" expanded="false" />
                 <element signature="method#getDateFromDatePicker#0;class#CreateEventActivity#0" expanded="false" />
                 <element signature="method#getHTTPClient#0;class#CreateEventActivity#0" expanded="false" />
-                <element signature="e#7013#7020#0" expanded="false" />
+                <element signature="e#7854#7861#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1990,8 +1987,8 @@
         <option value="$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/database/sqlite/SQLiteOpenHelper.class" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/models/Event.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/database/EventDatabase.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/CreateEventActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/EventListActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/CreateEventActivity.java" />
       </list>
     </option>
   </component>
@@ -3181,20 +3178,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/CreateEventActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="124" column="85" selection-start-line="124" selection-start-column="85" selection-end-line="124" selection-end-column="85" />
-          <folding>
-            <element signature="e#2237#2258#0" expanded="false" />
-            <element signature="e#6451#6474#0" expanded="false" />
-            <element signature="method#getDateFromDatePicker#0;class#CreateEventActivity#0" expanded="false" />
-            <element signature="method#getHTTPClient#0;class#CreateEventActivity#0" expanded="false" />
-            <element signature="e#7013#7020#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/EventListActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -3209,6 +3192,20 @@
             <element signature="method#getHTTPClient#0;class#EventListActivity#0" expanded="false" />
             <element signature="e#8282#8289#0" expanded="false" />
             <element signature="method#get_value#0;class#EventListActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/CreateEventActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="134" column="123" selection-start-line="134" selection-start-column="123" selection-end-line="134" selection-end-column="123" />
+          <folding>
+            <element signature="e#2237#2258#0" expanded="false" />
+            <element signature="e#7292#7315#0" expanded="false" />
+            <element signature="method#getDateFromDatePicker#0;class#CreateEventActivity#0" expanded="false" />
+            <element signature="method#getHTTPClient#0;class#CreateEventActivity#0" expanded="false" />
+            <element signature="e#7854#7861#0" expanded="false" />
           </folding>
         </state>
       </provider>
