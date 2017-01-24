@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -33,6 +35,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 
 import retrofit2.Call;
@@ -73,80 +77,113 @@ public class EventListActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        //region CheckConnectivity
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (hasActiveInternetConnection()) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getBaseContext(), "You are connected", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                } else {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getBaseContext(), "You are not connected", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            }
+        });
+        thread.start();
+        //endregion
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
-                progressDialog.setMessage("Processing data...");
-                progressDialog.show();
-                Thread thread = new Thread() {
-                    public void run() {
-                        try {
-                            final NetworkingSettings networkSettings = new NetworkingSettings();
-                            final String url = networkSettings.getBaseUrl() + "/event";
-                            HttpClient httpclient = getHTTPClient();
-                            HttpGet httpGet = new HttpGet(url);
-
-                            final SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("events", Context.MODE_PRIVATE);
-                            final String last_modified = sharedPreferences.getString(LAST_MODIFIED, DEFAULT);
-                            if (!last_modified.equals(DEFAULT)) {
-                                httpGet.setHeader(IF_MODIFIED_SINCE, last_modified);
-                            }
-
-                            HttpResponse response;
+                if (isNetworkAvailable()) {
+                    progressDialog.setMessage("Processing data...");
+                    progressDialog.show();
+                    Thread thread = new Thread() {
+                        public void run() {
                             try {
-                                response = httpclient.execute(httpGet);
-                                if (response.getStatusLine().getStatusCode() == 200) {
-                                    String last_modif_response = get_value(response.getHeaders(LAST_MODIFIED)[0].toString());
+                                final NetworkingSettings networkSettings = new NetworkingSettings();
+                                final String url = networkSettings.getBaseUrl() + "/event";
+                                HttpClient httpclient = getHTTPClient();
+                                HttpGet httpGet = new HttpGet(url);
 
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putString(LAST_MODIFIED, last_modif_response);
-                                    editor.apply();
+                                final SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("events", Context.MODE_PRIVATE);
+                                final String last_modified = sharedPreferences.getString(LAST_MODIFIED, DEFAULT);
+                                if (!last_modified.equals(DEFAULT)) {
+                                    httpGet.setHeader(IF_MODIFIED_SINCE, last_modified);
+                                }
 
-                                    // parsing and saving the events
-                                    String server_response = EntityUtils.toString(response.getEntity());
-                                    JSONArray jsonArray = new JSONArray(server_response);
-                                    for (int i = 0; i < jsonArray.length(); i += 1) {
-                                        JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                        String id = jsonObject.optString(EVENT_ID, DEFAULT);
-                                        String text = jsonObject.optString(EVENT_TEXT, DEFAULT);
-                                        String date = jsonObject.optString(EVENT_DATE, DEFAULT);
-                                        Event event = new Event(id, text, date);
-                                        eventDatabase.saveEvent(event);
-                                    }
-                                    runOnUiThread(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            Toast.makeText(getBaseContext(), "Sync completed!", Toast.LENGTH_LONG).show();
-                                            Intent intent = new Intent(EventListActivity.this, EventListActivity.class);
-                                            startActivity(intent);
+                                HttpResponse response;
+                                try {
+                                    response = httpclient.execute(httpGet);
+                                    if (response.getStatusLine().getStatusCode() == 200) {
+                                        String last_modif_response = get_value(response.getHeaders(LAST_MODIFIED)[0].toString());
+
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putString(LAST_MODIFIED, last_modif_response);
+                                        editor.apply();
+
+                                        // parsing and saving the events
+                                        String server_response = EntityUtils.toString(response.getEntity());
+                                        JSONArray jsonArray = new JSONArray(server_response);
+                                        for (int i = 0; i < jsonArray.length(); i += 1) {
+                                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                            String id = jsonObject.optString(EVENT_ID, DEFAULT);
+                                            String text = jsonObject.optString(EVENT_TEXT, DEFAULT);
+                                            String date = jsonObject.optString(EVENT_DATE, DEFAULT);
+                                            Event event = new Event(id, text, date);
+                                            eventDatabase.saveEvent(event);
                                         }
-                                    });
-                                } else if (response.getStatusLine().getStatusCode() == 304){
-                                    Snackbar.make(view, "You are up to date.", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-                                    progressDialog.dismiss();
-                                } else {
-                                    Snackbar.make(view, "Something went wrong. Please try again later.", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-                                    progressDialog.dismiss();
+                                        runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                Toast.makeText(getBaseContext(), "Sync completed!", Toast.LENGTH_LONG).show();
+                                                Intent intent = new Intent(EventListActivity.this, EventListActivity.class);
+                                                startActivity(intent);
+                                            }
+                                        });
+                                    } else if (response.getStatusLine().getStatusCode() == 304){
+                                        Snackbar.make(view, "You are up to date.", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                                        progressDialog.dismiss();
+                                    } else {
+                                        Snackbar.make(view, "Something went wrong. Please try again later.", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                                        progressDialog.dismiss();
+                                    }
+                                } catch (Exception e) {
+                                    e.printStackTrace();
                                 }
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
-                        } catch (Exception e) {
-                            e.printStackTrace();
                         }
-                    }
 
-                };
-                thread.start();
-                try {
-                    thread.join();
-                }catch (InterruptedException ie) {
-                    ie.printStackTrace();
+                    };
+                    thread.start();
+                    try {
+                        thread.join();
+                    }catch (InterruptedException ie) {
+                        ie.printStackTrace();
+                    }
+                    Log.d("events.size = ", String.valueOf(eventDatabase.getEvents().size()));
+                } else {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getBaseContext(), "Please connect to the internet", Toast.LENGTH_LONG).show();
+                        }
+                    });
                 }
-                Log.d("events.size = ", String.valueOf(eventDatabase.getEvents().size()));
             }
         });
     }
@@ -169,6 +206,30 @@ public class EventListActivity extends AppCompatActivity {
         if (id == R.id.action_new_event) {
             Intent intent = new Intent(EventListActivity.this, CreateEventActivity.class);
             startActivity(intent);
+        }
+
+        if (id == R.id.action_check_connection) {
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    if (hasActiveInternetConnection()) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getBaseContext(), "You are connected", Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    } else {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getBaseContext(), "You are not connected", Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
+                }
+            });
+            thread.start();
         }
 
         return super.onOptionsItemSelected(item);
@@ -219,6 +280,31 @@ public class EventListActivity extends AppCompatActivity {
             value+= s.charAt(j);
         }
         return value;
+    }
+
+    public boolean hasActiveInternetConnection() {
+        if (isNetworkAvailable()) {
+            try {
+                HttpURLConnection urlc = (HttpURLConnection) (new URL("http://www.google.com").openConnection());
+                urlc.setRequestProperty("User-Agent", "Test");
+                urlc.setRequestProperty("Connection", "close");
+                urlc.setConnectTimeout(1500);
+                urlc.connect();
+                return (urlc.getResponseCode() == 200);
+            } catch (IOException e) {
+                Log.e("error ", "Error checking internet connection", e);
+            }
+        } else {
+            return false;
+        }
+        return false;
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null;
     }
     //endregion
 
