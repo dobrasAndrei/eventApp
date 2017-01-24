@@ -1,5 +1,6 @@
 package com.example.takeofflabs.eventapp.activities;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -50,6 +51,8 @@ public class EventListActivity extends AppCompatActivity {
     private final String EVENT_TEXT = "text";
     private final String EVENT_DATE = "date";
     private EventDatabase eventDatabase;
+    private ProgressDialog progressDialog;
+
     //endregion
 
     @Override
@@ -61,6 +64,7 @@ public class EventListActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         eventDatabase = new EventDatabase(this);
+        progressDialog = new ProgressDialog(EventListActivity.this);
         //endregion
 
         try {
@@ -72,11 +76,11 @@ public class EventListActivity extends AppCompatActivity {
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(final View view) {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
-                Toast.makeText(getBaseContext(), "S@l", Toast.LENGTH_LONG).show();
-
+                progressDialog.setMessage("Processing data...");
+                progressDialog.show();
                 Thread thread = new Thread() {
                     public void run() {
                         try {
@@ -112,6 +116,20 @@ public class EventListActivity extends AppCompatActivity {
                                         Event event = new Event(id, text, date);
                                         eventDatabase.saveEvent(event);
                                     }
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toast.makeText(getBaseContext(), "Sync completed!", Toast.LENGTH_LONG).show();
+                                            Intent intent = new Intent(EventListActivity.this, EventListActivity.class);
+                                            startActivity(intent);
+                                        }
+                                    });
+                                } else if (response.getStatusLine().getStatusCode() == 304){
+                                    Snackbar.make(view, "You are up to date.", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                                    progressDialog.dismiss();
+                                } else {
+                                    Snackbar.make(view, "Something went wrong. Please try again later.", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                                    progressDialog.dismiss();
                                 }
                             } catch (Exception e) {
                                 e.printStackTrace();

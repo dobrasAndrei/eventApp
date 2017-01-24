@@ -1,5 +1,6 @@
 package com.example.takeofflabs.eventapp.activities;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -50,6 +51,7 @@ public class CreateEventActivity extends AppCompatActivity {
     private final String EVENT_TEXT = "text";
     private final String EVENT_DATE = "date";
     private EventDatabase eventDatabase;
+    private ProgressDialog progressDialog;
     //endregion
 
     @Override
@@ -57,7 +59,7 @@ public class CreateEventActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_create_event);
         eventDatabase = new EventDatabase(this);
-
+        progressDialog = new ProgressDialog(CreateEventActivity.this);
         //region widgetsSetup
         eventText = (EditText) findViewById(R.id.eventText);
         eventDate = (DatePicker) findViewById(R.id.datePicker);
@@ -67,6 +69,8 @@ public class CreateEventActivity extends AppCompatActivity {
         addEventBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressDialog.setMessage("Processing data...");
+                progressDialog.show();
                 boolean makeRequest = true;
                 final String text = eventText.getText().toString();
                 if (text.equals("")) {
@@ -118,6 +122,7 @@ public class CreateEventActivity extends AppCompatActivity {
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
+                                        Toast.makeText(getBaseContext(), "Event added!", Toast.LENGTH_LONG).show();
                                         Intent intent = new Intent(CreateEventActivity.this, EventListActivity.class);
                                         startActivity(intent);
                                     }
