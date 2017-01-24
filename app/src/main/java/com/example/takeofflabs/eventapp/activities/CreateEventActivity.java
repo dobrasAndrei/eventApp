@@ -39,6 +39,7 @@ import retrofit2.http.PartMap;
 
 public class CreateEventActivity extends AppCompatActivity {
 
+    //region Properties
     private EditText eventText;
     private DatePicker eventDate;
     private Button addEventBtn;
@@ -49,7 +50,7 @@ public class CreateEventActivity extends AppCompatActivity {
     private final String EVENT_TEXT = "text";
     private final String EVENT_DATE = "date";
     private EventDatabase eventDatabase;
-
+    //endregion
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +58,11 @@ public class CreateEventActivity extends AppCompatActivity {
         this.setContentView(R.layout.activity_create_event);
         eventDatabase = new EventDatabase(this);
 
+        //region widgetsSetup
         eventText = (EditText) findViewById(R.id.eventText);
         eventDate = (DatePicker) findViewById(R.id.datePicker);
         addEventBtn = (Button) findViewById(R.id.addEventBtn);
+        //endregion
 
         addEventBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,13 +115,13 @@ public class CreateEventActivity extends AppCompatActivity {
                                 }catch (Exception e) {
                                     e.printStackTrace();
                                 }
-//                                runOnUiThread(new Runnable() {
-//                                    @Override
-//                                    public void run() {
-//                                        Intent intent = new Intent(CreateEventActivity.this, EventListActivity.class);
-//                                        startActivity(intent);
-//                                    }
-//                                });
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Intent intent = new Intent(CreateEventActivity.this, EventListActivity.class);
+                                        startActivity(intent);
+                                    }
+                                });
                             }catch (IOException ex) {
                                 ex.printStackTrace();
                             }
@@ -137,7 +140,8 @@ public class CreateEventActivity extends AppCompatActivity {
 
     }
 
-    public static java.util.Date getDateFromDatePicker(DatePicker datePicker){
+    //region privateMethods
+    private static java.util.Date getDateFromDatePicker(DatePicker datePicker){
         int day = datePicker.getDayOfMonth();
         int month = datePicker.getMonth();
         int year =  datePicker.getYear();
@@ -178,4 +182,6 @@ public class CreateEventActivity extends AppCompatActivity {
         return httpclient;
 
     }
+    //endregion
+
 }

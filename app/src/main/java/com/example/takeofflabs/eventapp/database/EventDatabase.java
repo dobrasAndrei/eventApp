@@ -16,8 +16,8 @@ import java.util.ArrayList;
 
 public class EventDatabase extends SQLiteOpenHelper {
 
+    //region Properties
     public static final String TAG = EventDatabase.class.getSimpleName();
-
     public static final String TABLE_EVENTS = "events";
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_TEXT = "text";
@@ -30,23 +30,27 @@ public class EventDatabase extends SQLiteOpenHelper {
             + " integer primary key autoincrement, "
             + COLUMN_TEXT + " text not null, "
             + COLUMN_DATE + " text not null);";
+    //endregion
 
+    //region Constructors
     public EventDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+    //endregion
 
-        @Override
-        public void onCreate(SQLiteDatabase database) {
-            database.execSQL(DATABASE_CREATE);
-        }
-//
-        @Override
-        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            db.execSQL("DROP TABLE IF EXISTS " + TABLE_EVENTS);
-            onCreate(db);
-        }
+    @Override
+    public void onCreate(SQLiteDatabase database) {
+        database.execSQL(DATABASE_CREATE);
+    }
 
-        public void saveEvent(Event event) {
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_EVENTS);
+        onCreate(db);
+    }
+
+    //region publicMethods
+    public void saveEvent(Event event) {
             ContentValues cv = new ContentValues();
             cv.put(COLUMN_ID, event.getId());
             cv.put(COLUMN_TEXT, event.getText());
@@ -55,8 +59,8 @@ public class EventDatabase extends SQLiteOpenHelper {
             db.insert(TABLE_EVENTS, null, cv);
             db.close();
         }
-//
-        public ArrayList<Event> getEvents() {
+
+    public ArrayList<Event> getEvents() {
             ArrayList<Event> events = new ArrayList<Event>();
             String getEventsQuery = "select * " + "from " + TABLE_EVENTS;
             Cursor c = getReadableDatabase().rawQuery(getEventsQuery, null, null);
@@ -67,20 +71,6 @@ public class EventDatabase extends SQLiteOpenHelper {
             }
             return events;
         }
-//
-//        public boolean deleteUser(User currentUser) {
-//            SQLiteDatabase db = getWritableDatabase();
-//            int deleted = db.delete(TABLE_USERS,
-//                    String.format("%s = ? and %s = ?", COLUMN_USERNAME, COLUMN_PASSWORD),
-//                    new String[] { currentUser.getUsername(), currentUser.getPassword() });
-//            db.close();
-//            if (deleted == 0) {
-//                return false;
-//            } else {
-//                return true;
-//            }
-//        }
-//    }
-
+    //endregion
 
 }

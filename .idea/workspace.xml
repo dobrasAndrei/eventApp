@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9b49bac-8353-49f8-b028-f8b5f8ef42bd" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/interfaces/RetroManager.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
@@ -22,7 +23,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/CreateEventActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/CreateEventActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/EventListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/EventListActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/database/EventDatabase.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/database/EventDatabase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/models/Event.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/models/Event.java" />
     </list>
     <ignored path="EventApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,15 +59,18 @@
       <file leaf-file-name="EventListActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/EventListActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="126" column="90" selection-start-line="126" selection-start-column="16" selection-end-line="126" selection-end-column="90" />
+            <state relative-caret-position="1245">
+              <caret line="158" column="4" selection-start-line="158" selection-start-column="4" selection-end-line="158" selection-end-column="4" />
               <folding>
-                <element signature="e#2523#5905#0" expanded="true" />
-                <element signature="e#2888#5589#0" expanded="true" />
-                <element signature="e#5588#5589#0" expanded="true" />
-                <element signature="e#5904#5905#0" expanded="true" />
+                <element signature="e#1498#1517#0" expanded="false" />
+                <element signature="e#1957#1975#0" expanded="false" />
+                <element signature="method#onCreateOptionsMenu#0;class#EventListActivity#0" expanded="false" />
+                <element signature="method#onOptionsItemSelected#0;class#EventListActivity#0" expanded="false" />
+                <element signature="e#6248#6306#0" expanded="false" />
+                <element signature="e#6769#6792#0" expanded="false" />
                 <element signature="method#getHTTPClient#0;class#EventListActivity#0" expanded="false" />
-                <element signature="e#7388#7395#0" expanded="false" />
+                <element signature="e#6984#6991#0" expanded="false" />
+                <element signature="method#get_value#0;class#EventListActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -85,18 +89,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateEventActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CreateEventActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/CreateEventActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="132" column="48" selection-start-line="132" selection-start-column="48" selection-end-line="132" selection-end-column="48" />
+            <state relative-caret-position="1380">
+              <caret line="142" column="4" selection-start-line="142" selection-start-column="4" selection-end-line="142" selection-end-column="4" />
               <folding>
-                <element signature="e#2270#5993#0" expanded="true" />
-                <element signature="e#2839#5621#0" expanded="true" />
-                <element signature="e#5620#5621#0" expanded="true" />
-                <element signature="e#5992#5993#0" expanded="true" />
+                <element signature="e#1378#1397#0" expanded="false" />
+                <element signature="e#2089#2110#0" expanded="false" />
+                <element signature="e#2359#6068#0" expanded="true" />
+                <element signature="e#2928#5696#0" expanded="true" />
+                <element signature="e#5136#5508#0" expanded="true" />
+                <element signature="e#5507#5508#0" expanded="true" />
+                <element signature="e#5695#5696#0" expanded="true" />
+                <element signature="e#6067#6068#0" expanded="true" />
+                <element signature="e#6083#6106#0" expanded="false" />
+                <element signature="method#getDateFromDatePicker#0;class#CreateEventActivity#0" expanded="false" />
                 <element signature="method#getHTTPClient#0;class#CreateEventActivity#0" expanded="false" />
-                <element signature="e#6541#6548#0" expanded="false" />
+                <element signature="e#6645#6652#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -130,11 +140,33 @@
       <file leaf-file-name="EventDatabase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/database/EventDatabase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+            <state relative-caret-position="300">
+              <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2026#2033#0" expanded="true" />
+                <element signature="e#442#461#0" expanded="false" />
+                <element signature="e#1140#1161#0" expanded="false" />
+                <element signature="e#1204#1205#0" expanded="true" />
+                <element signature="e#1273#1274#0" expanded="true" />
+                <element signature="method#onUpgrade#0;class#EventDatabase#0" expanded="false" />
+                <element signature="e#1594#1616#0" expanded="false" />
+                <element signature="method#saveEvent#0;class#EventDatabase#0" expanded="false" />
+                <element signature="method#getEvents#0;class#EventDatabase#0" expanded="false" />
+                <element signature="e#2086#2093#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NetworkingSettings.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/settings/NetworkingSettings.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+              <folding>
+                <element signature="e#139#158#0" expanded="false" />
+                <element signature="e#244#265#0" expanded="false" />
+                <element signature="e#327#343#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -143,22 +175,14 @@
       <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/models/Event.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="90">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
               <folding>
-                <element signature="method#Event#0;class#Event#0" expanded="false" />
-                <element signature="e#357#358#0" expanded="false" />
-                <element signature="e#382#383#0" expanded="false" />
-                <element signature="e#418#419#0" expanded="false" />
-                <element signature="e#446#447#0" expanded="false" />
-                <element signature="e#477#478#0" expanded="false" />
-                <element signature="e#504#505#0" expanded="false" />
-                <element signature="e#544#545#0" expanded="false" />
-                <element signature="e#576#577#0" expanded="false" />
-                <element signature="e#607#608#0" expanded="false" />
-                <element signature="e#634#635#0" expanded="false" />
-                <element signature="e#674#675#0" expanded="false" />
-                <element signature="e#706#707#0" expanded="false" />
+                <element signature="e#124#143#0" expanded="false" />
+                <element signature="e#238#259#0" expanded="false" />
+                <element signature="e#417#445#0" expanded="false" />
+                <element signature="e#789#790#0" expanded="true" />
+                <element signature="e#821#822#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -179,25 +203,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Settings.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Settings.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/settings/Settings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="180">
               <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#592#593#0" expanded="false" />
-                <element signature="e#622#623#0" expanded="false" />
-                <element signature="e#668#669#0" expanded="false" />
-                <element signature="e#706#707#0" expanded="false" />
-                <element signature="e#742#743#0" expanded="false" />
-                <element signature="e#774#775#0" expanded="false" />
-                <element signature="e#824#825#0" expanded="false" />
-                <element signature="e#866#867#0" expanded="false" />
-                <element signature="e#900#901#0" expanded="false" />
-                <element signature="e#932#933#0" expanded="false" />
-                <element signature="e#980#981#0" expanded="false" />
-                <element signature="e#1022#1023#0" expanded="false" />
+                <element signature="e#248#277#0" expanded="false" />
+                <element signature="e#531#560#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1980,7 +1993,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/interfaces/RetroManager.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_event_list.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/models/Event.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/settings/database/database.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/database/database.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_event_list.xml" />
@@ -1988,8 +2000,9 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/os/Looper.class" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_create_event.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/database/EventDatabase.java" />
         <option value="$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/database/sqlite/SQLiteOpenHelper.class" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/models/Event.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/database/EventDatabase.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/EventListActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/CreateEventActivity.java" />
       </list>
@@ -2139,6 +2152,32 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="eventapp" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="settings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="EventApp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="eventapp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2530,12 +2569,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="806" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289855" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289855" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2615,7 +2654,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="46" />
+      <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="app">
@@ -2629,12 +2668,15 @@
         <state relative-caret-position="2265">
           <caret line="151" column="0" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
           <folding>
-            <element signature="e#2523#5905#0" expanded="true" />
-            <element signature="e#2888#5589#0" expanded="true" />
-            <element signature="e#5588#5589#0" expanded="true" />
-            <element signature="e#5904#5905#0" expanded="true" />
+            <element signature="e#1498#1517#0" expanded="false" />
+            <element signature="e#1957#1975#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#EventListActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#EventListActivity#0" expanded="false" />
+            <element signature="e#6248#6306#0" expanded="false" />
+            <element signature="e#6769#6792#0" expanded="false" />
             <element signature="method#getHTTPClient#0;class#EventListActivity#0" expanded="false" />
-            <element signature="e#7388#7395#0" expanded="false" />
+            <element signature="e#6984#6991#0" expanded="false" />
+            <element signature="method#get_value#0;class#EventListActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2658,7 +2700,15 @@
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2026#2033#0" expanded="true" />
+            <element signature="e#442#461#0" expanded="false" />
+            <element signature="e#1140#1161#0" expanded="false" />
+            <element signature="e#1204#1205#0" expanded="true" />
+            <element signature="e#1273#1274#0" expanded="true" />
+            <element signature="method#onUpgrade#0;class#EventDatabase#0" expanded="false" />
+            <element signature="e#1594#1616#0" expanded="false" />
+            <element signature="method#saveEvent#0;class#EventDatabase#0" expanded="false" />
+            <element signature="method#getEvents#0;class#EventDatabase#0" expanded="false" />
+            <element signature="e#2086#2093#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2668,19 +2718,11 @@
         <state relative-caret-position="375">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
-            <element signature="method#Event#0;class#Event#0" expanded="false" />
-            <element signature="e#357#358#0" expanded="false" />
-            <element signature="e#382#383#0" expanded="false" />
-            <element signature="e#418#419#0" expanded="false" />
-            <element signature="e#446#447#0" expanded="false" />
-            <element signature="e#477#478#0" expanded="false" />
-            <element signature="e#504#505#0" expanded="false" />
-            <element signature="e#544#545#0" expanded="false" />
-            <element signature="e#576#577#0" expanded="false" />
-            <element signature="e#607#608#0" expanded="false" />
-            <element signature="e#634#635#0" expanded="false" />
-            <element signature="e#674#675#0" expanded="false" />
-            <element signature="e#706#707#0" expanded="false" />
+            <element signature="e#124#143#0" expanded="false" />
+            <element signature="e#238#259#0" expanded="false" />
+            <element signature="e#417#445#0" expanded="false" />
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2722,19 +2764,8 @@
         <state relative-caret-position="360">
           <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#592#593#0" expanded="false" />
-            <element signature="e#622#623#0" expanded="false" />
-            <element signature="e#668#669#0" expanded="false" />
-            <element signature="e#706#707#0" expanded="false" />
-            <element signature="e#742#743#0" expanded="false" />
-            <element signature="e#774#775#0" expanded="false" />
-            <element signature="e#824#825#0" expanded="false" />
-            <element signature="e#866#867#0" expanded="false" />
-            <element signature="e#900#901#0" expanded="false" />
-            <element signature="e#932#933#0" expanded="false" />
-            <element signature="e#980#981#0" expanded="false" />
-            <element signature="e#1022#1023#0" expanded="false" />
+            <element signature="e#248#277#0" expanded="false" />
+            <element signature="e#531#560#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2763,12 +2794,15 @@
         <state relative-caret-position="270">
           <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
           <folding>
-            <element signature="e#2523#5905#0" expanded="true" />
-            <element signature="e#2888#5589#0" expanded="true" />
-            <element signature="e#5588#5589#0" expanded="true" />
-            <element signature="e#5904#5905#0" expanded="true" />
+            <element signature="e#1498#1517#0" expanded="false" />
+            <element signature="e#1957#1975#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#EventListActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#EventListActivity#0" expanded="false" />
+            <element signature="e#6248#6306#0" expanded="false" />
+            <element signature="e#6769#6792#0" expanded="false" />
             <element signature="method#getHTTPClient#0;class#EventListActivity#0" expanded="false" />
-            <element signature="e#7388#7395#0" expanded="false" />
+            <element signature="e#6984#6991#0" expanded="false" />
+            <element signature="method#get_value#0;class#EventListActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2779,7 +2813,15 @@
           <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2026#2033#0" expanded="true" />
+            <element signature="e#442#461#0" expanded="false" />
+            <element signature="e#1140#1161#0" expanded="false" />
+            <element signature="e#1204#1205#0" expanded="true" />
+            <element signature="e#1273#1274#0" expanded="true" />
+            <element signature="method#onUpgrade#0;class#EventDatabase#0" expanded="false" />
+            <element signature="e#1594#1616#0" expanded="false" />
+            <element signature="method#saveEvent#0;class#EventDatabase#0" expanded="false" />
+            <element signature="method#getEvents#0;class#EventDatabase#0" expanded="false" />
+            <element signature="e#2086#2093#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2789,19 +2831,11 @@
         <state relative-caret-position="375">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
-            <element signature="method#Event#0;class#Event#0" expanded="false" />
-            <element signature="e#357#358#0" expanded="false" />
-            <element signature="e#382#383#0" expanded="false" />
-            <element signature="e#418#419#0" expanded="false" />
-            <element signature="e#446#447#0" expanded="false" />
-            <element signature="e#477#478#0" expanded="false" />
-            <element signature="e#504#505#0" expanded="false" />
-            <element signature="e#544#545#0" expanded="false" />
-            <element signature="e#576#577#0" expanded="false" />
-            <element signature="e#607#608#0" expanded="false" />
-            <element signature="e#634#635#0" expanded="false" />
-            <element signature="e#674#675#0" expanded="false" />
-            <element signature="e#706#707#0" expanded="false" />
+            <element signature="e#124#143#0" expanded="false" />
+            <element signature="e#238#259#0" expanded="false" />
+            <element signature="e#417#445#0" expanded="false" />
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2843,19 +2877,8 @@
         <state relative-caret-position="360">
           <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#592#593#0" expanded="false" />
-            <element signature="e#622#623#0" expanded="false" />
-            <element signature="e#668#669#0" expanded="false" />
-            <element signature="e#706#707#0" expanded="false" />
-            <element signature="e#742#743#0" expanded="false" />
-            <element signature="e#774#775#0" expanded="false" />
-            <element signature="e#824#825#0" expanded="false" />
-            <element signature="e#866#867#0" expanded="false" />
-            <element signature="e#900#901#0" expanded="false" />
-            <element signature="e#932#933#0" expanded="false" />
-            <element signature="e#980#981#0" expanded="false" />
-            <element signature="e#1022#1023#0" expanded="false" />
+            <element signature="e#248#277#0" expanded="false" />
+            <element signature="e#531#560#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2892,12 +2915,15 @@
         <state relative-caret-position="1200">
           <caret line="116" column="32" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
           <folding>
-            <element signature="e#2523#5905#0" expanded="true" />
-            <element signature="e#2888#5589#0" expanded="true" />
-            <element signature="e#5588#5589#0" expanded="true" />
-            <element signature="e#5904#5905#0" expanded="true" />
+            <element signature="e#1498#1517#0" expanded="false" />
+            <element signature="e#1957#1975#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#EventListActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#EventListActivity#0" expanded="false" />
+            <element signature="e#6248#6306#0" expanded="false" />
+            <element signature="e#6769#6792#0" expanded="false" />
             <element signature="method#getHTTPClient#0;class#EventListActivity#0" expanded="false" />
-            <element signature="e#7388#7395#0" expanded="false" />
+            <element signature="e#6984#6991#0" expanded="false" />
+            <element signature="method#get_value#0;class#EventListActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2939,19 +2965,8 @@
         <state relative-caret-position="405">
           <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#592#593#0" expanded="false" />
-            <element signature="e#622#623#0" expanded="false" />
-            <element signature="e#668#669#0" expanded="false" />
-            <element signature="e#706#707#0" expanded="false" />
-            <element signature="e#742#743#0" expanded="false" />
-            <element signature="e#774#775#0" expanded="false" />
-            <element signature="e#824#825#0" expanded="false" />
-            <element signature="e#866#867#0" expanded="false" />
-            <element signature="e#900#901#0" expanded="false" />
-            <element signature="e#932#933#0" expanded="false" />
-            <element signature="e#980#981#0" expanded="false" />
-            <element signature="e#1022#1023#0" expanded="false" />
+            <element signature="e#248#277#0" expanded="false" />
+            <element signature="e#531#560#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3001,14 +3016,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/interfaces/RetroManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -3026,61 +3033,6 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/settings/NetworkingSettings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="61" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
-          <folding>
-            <element signature="e#375#376#0" expanded="false" />
-            <element signature="e#405#406#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/settings/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#592#593#0" expanded="false" />
-            <element signature="e#622#623#0" expanded="false" />
-            <element signature="e#668#669#0" expanded="false" />
-            <element signature="e#706#707#0" expanded="false" />
-            <element signature="e#742#743#0" expanded="false" />
-            <element signature="e#774#775#0" expanded="false" />
-            <element signature="e#824#825#0" expanded="false" />
-            <element signature="e#866#867#0" expanded="false" />
-            <element signature="e#900#901#0" expanded="false" />
-            <element signature="e#932#933#0" expanded="false" />
-            <element signature="e#980#981#0" expanded="false" />
-            <element signature="e#1022#1023#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/models/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <element signature="method#Event#0;class#Event#0" expanded="false" />
-            <element signature="e#357#358#0" expanded="false" />
-            <element signature="e#382#383#0" expanded="false" />
-            <element signature="e#418#419#0" expanded="false" />
-            <element signature="e#446#447#0" expanded="false" />
-            <element signature="e#477#478#0" expanded="false" />
-            <element signature="e#504#505#0" expanded="false" />
-            <element signature="e#544#545#0" expanded="false" />
-            <element signature="e#576#577#0" expanded="false" />
-            <element signature="e#607#608#0" expanded="false" />
-            <element signature="e#634#635#0" expanded="false" />
-            <element signature="e#674#675#0" expanded="false" />
-            <element signature="e#706#707#0" expanded="false" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_event_list.xml">
@@ -3147,43 +3099,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/database/EventDatabase.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/interfaces/RetroManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="56" column="9" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+        <state relative-caret-position="120">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/CreateEventActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="142" column="4" selection-start-line="142" selection-start-column="4" selection-end-line="142" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2026#2033#0" expanded="true" />
+            <element signature="e#1378#1397#0" expanded="false" />
+            <element signature="e#2089#2110#0" expanded="false" />
+            <element signature="e#2359#6068#0" expanded="true" />
+            <element signature="e#2928#5696#0" expanded="true" />
+            <element signature="e#5136#5508#0" expanded="true" />
+            <element signature="e#5507#5508#0" expanded="true" />
+            <element signature="e#5695#5696#0" expanded="true" />
+            <element signature="e#6067#6068#0" expanded="true" />
+            <element signature="e#6083#6106#0" expanded="false" />
+            <element signature="method#getDateFromDatePicker#0;class#CreateEventActivity#0" expanded="false" />
+            <element signature="method#getHTTPClient#0;class#CreateEventActivity#0" expanded="false" />
+            <element signature="e#6645#6652#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/EventListActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="126" column="90" selection-start-line="126" selection-start-column="16" selection-end-line="126" selection-end-column="90" />
+        <state relative-caret-position="1245">
+          <caret line="158" column="4" selection-start-line="158" selection-start-column="4" selection-end-line="158" selection-end-column="4" />
           <folding>
-            <element signature="e#2523#5905#0" expanded="true" />
-            <element signature="e#2888#5589#0" expanded="true" />
-            <element signature="e#5588#5589#0" expanded="true" />
-            <element signature="e#5904#5905#0" expanded="true" />
+            <element signature="e#1498#1517#0" expanded="false" />
+            <element signature="e#1957#1975#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#EventListActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#EventListActivity#0" expanded="false" />
+            <element signature="e#6248#6306#0" expanded="false" />
+            <element signature="e#6769#6792#0" expanded="false" />
             <element signature="method#getHTTPClient#0;class#EventListActivity#0" expanded="false" />
-            <element signature="e#7388#7395#0" expanded="false" />
+            <element signature="e#6984#6991#0" expanded="false" />
+            <element signature="method#get_value#0;class#EventListActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/activities/CreateEventActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/database/EventDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="132" column="48" selection-start-line="132" selection-start-column="48" selection-end-line="132" selection-end-column="48" />
+        <state relative-caret-position="300">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
           <folding>
-            <element signature="e#2270#5993#0" expanded="true" />
-            <element signature="e#2839#5621#0" expanded="true" />
-            <element signature="e#5620#5621#0" expanded="true" />
-            <element signature="e#5992#5993#0" expanded="true" />
-            <element signature="method#getHTTPClient#0;class#CreateEventActivity#0" expanded="false" />
-            <element signature="e#6541#6548#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#442#461#0" expanded="false" />
+            <element signature="e#1140#1161#0" expanded="false" />
+            <element signature="e#1204#1205#0" expanded="true" />
+            <element signature="e#1273#1274#0" expanded="true" />
+            <element signature="method#onUpgrade#0;class#EventDatabase#0" expanded="false" />
+            <element signature="e#1594#1616#0" expanded="false" />
+            <element signature="method#saveEvent#0;class#EventDatabase#0" expanded="false" />
+            <element signature="method#getEvents#0;class#EventDatabase#0" expanded="false" />
+            <element signature="e#2086#2093#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/models/Event.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="e#124#143#0" expanded="false" />
+            <element signature="e#238#259#0" expanded="false" />
+            <element signature="e#417#445#0" expanded="false" />
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/settings/NetworkingSettings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding>
+            <element signature="e#139#158#0" expanded="false" />
+            <element signature="e#244#265#0" expanded="false" />
+            <element signature="e#327#343#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/takeofflabs/eventapp/settings/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+          <folding>
+            <element signature="e#248#277#0" expanded="false" />
+            <element signature="e#531#560#0" expanded="false" />
           </folding>
         </state>
       </provider>

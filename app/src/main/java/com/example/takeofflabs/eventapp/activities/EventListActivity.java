@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import com.example.takeofflabs.eventapp.R;
 import com.example.takeofflabs.eventapp.database.EventDatabase;
-import com.example.takeofflabs.eventapp.interfaces.RetroManager;
 import com.example.takeofflabs.eventapp.models.Event;
 import com.example.takeofflabs.eventapp.settings.NetworkingSettings;
 
@@ -43,6 +42,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class EventListActivity extends AppCompatActivity {
 
+    //region Properties
     private final String DEFAULT = "null";
     private final String IF_MODIFIED_SINCE = "If-Modified-Since";
     private final String LAST_MODIFIED = "Last-Modified";
@@ -50,20 +50,24 @@ public class EventListActivity extends AppCompatActivity {
     private final String EVENT_TEXT = "text";
     private final String EVENT_DATE = "date";
     private EventDatabase eventDatabase;
+    //endregion
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //region viewSetup
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         eventDatabase = new EventDatabase(this);
-//        try {
-//            ArrayList<Event> events = eventDatabase.getEvents();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-        String a = "";
+        //endregion
+
+        try {
+            Log.d("events.size = ", String.valueOf(eventDatabase.getEvents().size()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -129,21 +133,6 @@ public class EventListActivity extends AppCompatActivity {
         });
     }
 
-    private String get_value(String s) {
-        int start = 0;
-        String value = "";
-        for (int i = 0; i <s.length(); i+=1) {
-            if (s.charAt(i) == ':') {
-                start = i+1;
-                break;
-            }
-        }
-        for (int j = start+1; j < s.length(); j+=1) {
-            value+= s.charAt(j);
-        }
-        return value;
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -160,7 +149,6 @@ public class EventListActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_new_event) {
-//            ArrayList<Event> events = eventDatabase.getEvents();
             Intent intent = new Intent(EventListActivity.this, CreateEventActivity.class);
             startActivity(intent);
         }
@@ -168,6 +156,7 @@ public class EventListActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //region privateMethods
     private static HttpClient getHTTPClient() {
         HttpParams params = new BasicHttpParams();
         params.setParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE, false); // this
@@ -198,4 +187,21 @@ public class EventListActivity extends AppCompatActivity {
         return httpclient;
 
     }
+
+    private String get_value(String s) {
+        int start = 0;
+        String value = "";
+        for (int i = 0; i <s.length(); i+=1) {
+            if (s.charAt(i) == ':') {
+                start = i+1;
+                break;
+            }
+        }
+        for (int j = start+1; j < s.length(); j+=1) {
+            value+= s.charAt(j);
+        }
+        return value;
+    }
+    //endregion
+
 }
