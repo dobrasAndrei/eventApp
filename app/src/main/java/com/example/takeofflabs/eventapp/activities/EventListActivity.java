@@ -58,6 +58,12 @@ public class EventListActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         eventDatabase = new EventDatabase(this);
+//        try {
+//            ArrayList<Event> events = eventDatabase.getEvents();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+        String a = "";
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +119,12 @@ public class EventListActivity extends AppCompatActivity {
 
                 };
                 thread.start();
+                try {
+                    thread.join();
+                }catch (InterruptedException ie) {
+                    ie.printStackTrace();
+                }
+                Log.d("events.size = ", String.valueOf(eventDatabase.getEvents().size()));
             }
         });
     }

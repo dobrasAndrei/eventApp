@@ -61,7 +61,7 @@ public class EventDatabase extends SQLiteOpenHelper {
             String getEventsQuery = "select * " + "from " + TABLE_EVENTS;
             Cursor c = getReadableDatabase().rawQuery(getEventsQuery, null, null);
             c.moveToFirst();
-            while (c.getPosition() != c.getCount()) {
+            while (c.getPosition() < c.getCount()) {
                 events.add(new Event(c.getString(0), c.getString(1), c.getString(2)));
                 c.moveToNext();
             }

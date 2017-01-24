@@ -115,7 +115,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="67ee4513f2edb47ed03c352bbafbba19e6d9dada">
+        sha1="1739e3ed4c33b16ee229673631a3805cb256186b">
         <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_fc4592c0b254f30272dfeda87d77962ab1a7a90f/classes.dex" />
     </item>
     <item
@@ -187,7 +187,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="b750d15d3b6243d8241af74548c36e915d91f323">
+        sha1="8bb399d4fe1d7daae9d44a5d2f0af80531660052">
         <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d5a59e81827d8360aad2888ff9a2b9a076293469/classes.dex" />
     </item>
     <item
