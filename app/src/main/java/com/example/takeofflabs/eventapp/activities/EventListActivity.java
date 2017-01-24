@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.takeofflabs.eventapp.R;
 import com.example.takeofflabs.eventapp.interfaces.RetroManager;
+import com.example.takeofflabs.eventapp.models.Event;
 import com.example.takeofflabs.eventapp.settings.NetworkingSettings;
 
 import org.apache.http.HttpResponse;
@@ -47,6 +48,13 @@ public class EventListActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        final String DEFAULT = "null";
+        final String IF_MODIFIED_SINCE = "If-Modified-Since";
+        final String LAST_MODIFIED = "Last-Modified";
+        final String EVENT_ID = "id";
+        final String EVENT_TEXT = "text";
+        final String EVENT_DATE = "date";
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,23 +70,41 @@ public class EventListActivity extends AppCompatActivity {
                             final String url = networkSettings.getBaseUrl() + "/event";
                             HttpClient httpclient = getHTTPClient();
                             HttpGet httpGet = new HttpGet(url);
-                            httpGet.setHeader("If-Modified-Since","Mon, 23 Jan 2017 21:56:16 GMT");
+
+                            final SharedPreferences sharedPreferences = getBaseContext().getSharedPreferences("events", Context.MODE_PRIVATE);
+                            final String last_modified = sharedPreferences.getString(LAST_MODIFIED, DEFAULT);
+                            if (!last_modified.equals(DEFAULT)) {
+                                httpGet.setHeader(IF_MODIFIED_SINCE, last_modified);
+                            }
+
                             HttpResponse response;
                             try {
                                 response = httpclient.execute(httpGet);
-                                String server_response = EntityUtils.toString(response.getEntity());
-                                JSONArray jsonArray = new JSONArray(server_response);
-                                for (int i = 0; i < jsonArray.length(); i+=1) {
-                                    JSONObject jsonObject = jsonArray.getJSONObject(0);
+                                if (response.getStatusLine().getStatusCode() == 200) {
+                                    String last_modif_response = get_value(response.getHeaders(LAST_MODIFIED)[0].toString());
+
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    editor.putString(LAST_MODIFIED, last_modif_response);
+                                    editor.apply();
+
+                                    // parsing and saving the events
+                                    String server_response = EntityUtils.toString(response.getEntity());
+                                    JSONArray jsonArray = new JSONArray(server_response);
+                                    for (int i = 0; i < jsonArray.length(); i += 1) {
+                                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                        String id = jsonObject.optString(EVENT_ID, DEFAULT);
+                                        String text = jsonObject.optString(EVENT_TEXT, DEFAULT);
+                                        String date = jsonObject.optString(EVENT_DATE, DEFAULT);
+                                        Event event = new Event(id, text, date);
+                                        String a = "";
+                                        // TODO: save the event in db
+                                    }
                                 }
-                                String a = "";
                             } catch (Exception e) {
                                 e.printStackTrace();
-                                String a = "";
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
-                            String a = "";
                         }
                     }
 
@@ -86,6 +112,21 @@ public class EventListActivity extends AppCompatActivity {
                 thread.start();
             }
         });
+    }
+
+    private String get_value(String s) {
+        int start = 0;
+        String value = "";
+        for (int i = 0; i <s.length(); i+=1) {
+            if (s.charAt(i) == ':') {
+                start = i+1;
+                break;
+            }
+        }
+        for (int j = start+1; j < s.length(); j+=1) {
+            value+= s.charAt(j);
+        }
+        return value;
     }
 
     @Override

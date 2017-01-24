@@ -12,33 +12,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/libs/httpcore-4.1.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="39e30fb2ddfcf32b9dd663039ca6e847b698aa6f">
-        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpcore-4.1.2_b9760272d5379f9caa5aead117e412b7f42af945/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/takeofflabs/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/2de7cd8b95b7021b1d597f049bcb422055119f2c/retrofit-2.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
-        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.1.0_0d306fbf865076ae3fec62bea9a0df22a1985d65/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="c5f01f54be5000d709efb6cf80dd05557d9f52db">
-        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_fc4592c0b254f30272dfeda87d77962ab1a7a90f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/takeofflabs/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
         jumboMode="true"
         optimize="true"
@@ -63,42 +36,6 @@
         revision="24.0.2"
         sha1="ed8b5ee0167cb27dea55851259eb34b609f31df0">
         <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpmime-4.1.2_ffb9ae68dd1026d95e0bb91bf11bb5f094b37b06/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/takeofflabs/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
-        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.8.0_f1483b31cbc95d63da4b8c1c14dc22528cbd6589/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
-        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_ec95ec79dc96f7d53d3c61007dc6c4d6f3952051/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
-        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_7ff36235ea656c307efdb2976d00ae10a384f00c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/libs/apache-mime4j-core-0.7.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="a06e8c6d9fa4063df541427686e9f070377b7b8e">
-        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/2/apache-mime4j-core-0.7_9ca7fc59c7c8ba963ce6c347080320b86c368938/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -129,6 +66,96 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_35029e47dac8631c13b8dd5fff18407ad7c27d94/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/libs/httpclient-4.1.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="c5bf45f7f35857d2c2dccfadf213ff047778a7cb">
+        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpclient-4.1.2_e54be358647e21faf9db6913a0639fb459b15c3a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/takeofflabs/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.1.0/aa557d71ead91cbf26e0c316a0f593d168303309/converter-gson-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.1.0_c9f2d28662efdc86c67bb36540f02c3956f42621/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/takeofflabs/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/2de7cd8b95b7021b1d597f049bcb422055119f2c/retrofit-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.1.0_0d306fbf865076ae3fec62bea9a0df22a1985d65/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/libs/httpcore-4.1.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="39e30fb2ddfcf32b9dd663039ca6e847b698aa6f">
+        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpcore-4.1.2_b9760272d5379f9caa5aead117e412b7f42af945/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="c553d179d386c50f1540877cbc94a4d214eafee8">
+        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_fc4592c0b254f30272dfeda87d77962ab1a7a90f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_ec95ec79dc96f7d53d3c61007dc6c4d6f3952051/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/takeofflabs/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.8.0_f1483b31cbc95d63da4b8c1c14dc22528cbd6589/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_7ff36235ea656c307efdb2976d00ae10a384f00c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/libs/apache-mime4j-core-0.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="a06e8c6d9fa4063df541427686e9f070377b7b8e">
+        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/2/apache-mime4j-core-0.7_9ca7fc59c7c8ba963ce6c347080320b86c368938/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -156,39 +183,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
-        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_35029e47dac8631c13b8dd5fff18407ad7c27d94/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="64f96fdb5c2137ff07d176af75b7cb4ca6fed930">
+        sha1="77e6c3fc544f31ae26b7c6138a5bb20230b258f9">
         <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d5a59e81827d8360aad2888ff9a2b9a076293469/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/libs/httpclient-4.1.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="c5bf45f7f35857d2c2dccfadf213ff047778a7cb">
-        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpclient-4.1.2_e54be358647e21faf9db6913a0639fb459b15c3a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/takeofflabs/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.1.0/aa557d71ead91cbf26e0c316a0f593d168303309/converter-gson-2.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
-        <dex dex="/Users/takeofflabs/work/facultateAn3/MobileGeoDia/Geo/EventApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.1.0_c9f2d28662efdc86c67bb36540f02c3956f42621/classes.dex" />
     </item>
     <item
         is-multidex="true"
