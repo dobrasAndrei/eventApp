@@ -147,9 +147,10 @@ public class EventListActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            ArrayList<Event> events = eventDatabase.getEvents();
-            String a = "";
+        if (id == R.id.action_new_event) {
+//            ArrayList<Event> events = eventDatabase.getEvents();
+            Intent intent = new Intent(EventListActivity.this, CreateEventActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

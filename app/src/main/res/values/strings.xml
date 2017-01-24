@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">EventApp</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_new_event">Add a new Event</string>
 </resources>
