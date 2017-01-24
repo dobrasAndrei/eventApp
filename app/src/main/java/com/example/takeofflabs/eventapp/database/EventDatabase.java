@@ -56,13 +56,17 @@ public class EventDatabase extends SQLiteOpenHelper {
             db.close();
         }
 //
-//        public ArrayList<Event> getEvents() {
-//            ArrayList<Event> events = new ArrayList<Event>();
-//            String getEventsQuery = "select * " + "from " + TABLE_EVENTS;
-//            Cursor c = getReadableDatabase().rawQuery(getEventsQuery, null, null);
-//            String a = "";
-//            return events;
-//        }
+        public ArrayList<Event> getEvents() {
+            ArrayList<Event> events = new ArrayList<Event>();
+            String getEventsQuery = "select * " + "from " + TABLE_EVENTS;
+            Cursor c = getReadableDatabase().rawQuery(getEventsQuery, null, null);
+            c.moveToFirst();
+            while (c.getPosition() != c.getCount()) {
+                events.add(new Event(c.getString(0), c.getString(1), c.getString(2)));
+                c.moveToNext();
+            }
+            return events;
+        }
 //
 //        public boolean deleteUser(User currentUser) {
 //            SQLiteDatabase db = getWritableDatabase();

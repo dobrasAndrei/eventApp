@@ -33,6 +33,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -42,21 +43,21 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class EventListActivity extends AppCompatActivity {
 
+    private final String DEFAULT = "null";
+    private final String IF_MODIFIED_SINCE = "If-Modified-Since";
+    private final String LAST_MODIFIED = "Last-Modified";
+    private final String EVENT_ID = "id";
+    private final String EVENT_TEXT = "text";
+    private final String EVENT_DATE = "date";
+    private EventDatabase eventDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_list);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        final String DEFAULT = "null";
-        final String IF_MODIFIED_SINCE = "If-Modified-Since";
-        final String LAST_MODIFIED = "Last-Modified";
-        final String EVENT_ID = "id";
-        final String EVENT_TEXT = "text";
-        final String EVENT_DATE = "date";
-        final EventDatabase eventDatabase = new EventDatabase(getBaseContext());
-
+        eventDatabase = new EventDatabase(this);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +101,6 @@ public class EventListActivity extends AppCompatActivity {
                                         String date = jsonObject.optString(EVENT_DATE, DEFAULT);
                                         Event event = new Event(id, text, date);
                                         eventDatabase.saveEvent(event);
-                                        // TODO: save the event in db
                                     }
                                 }
                             } catch (Exception e) {
@@ -148,7 +148,8 @@ public class EventListActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            ArrayList<Event> events = eventDatabase.getEvents();
+            String a = "";
         }
 
         return super.onOptionsItemSelected(item);
