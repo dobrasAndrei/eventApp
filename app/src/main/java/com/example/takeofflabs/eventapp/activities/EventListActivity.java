@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.takeofflabs.eventapp.R;
+import com.example.takeofflabs.eventapp.database.EventDatabase;
 import com.example.takeofflabs.eventapp.interfaces.RetroManager;
 import com.example.takeofflabs.eventapp.models.Event;
 import com.example.takeofflabs.eventapp.settings.NetworkingSettings;
@@ -54,6 +55,8 @@ public class EventListActivity extends AppCompatActivity {
         final String EVENT_ID = "id";
         final String EVENT_TEXT = "text";
         final String EVENT_DATE = "date";
+        final EventDatabase eventDatabase = new EventDatabase(getBaseContext());
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +99,7 @@ public class EventListActivity extends AppCompatActivity {
                                         String text = jsonObject.optString(EVENT_TEXT, DEFAULT);
                                         String date = jsonObject.optString(EVENT_DATE, DEFAULT);
                                         Event event = new Event(id, text, date);
-                                        String a = "";
+                                        eventDatabase.saveEvent(event);
                                         // TODO: save the event in db
                                     }
                                 }
